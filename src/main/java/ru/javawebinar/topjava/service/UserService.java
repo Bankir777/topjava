@@ -30,7 +30,7 @@ public class UserService implements UserDetailsService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository repository, PasswordEncoder passwordEncoder) {
+    public UserService(@Qualifier("dataJpaUserRepository") UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
     }
